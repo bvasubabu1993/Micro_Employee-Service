@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.main.entity.Employee;
+import com.app.main.model.EmployeeResponse;
 import com.app.main.service.EmployeeService;
 
 @RestController
@@ -38,7 +39,7 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/get/{id}")
-	public Optional<Employee> getById(@PathVariable int id) {
+	public EmployeeResponse getById(@PathVariable int id) {
 		return service.getById(id);
 	}
 	
